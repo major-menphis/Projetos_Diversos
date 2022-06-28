@@ -1,0 +1,107 @@
+h1 {
+    color: red;
+}
+
+/* 2 - Sintaxe */
+@media screen and (max-width: 500px) {
+/* max-width = telas menores que alguma resolução usam as modificações*/
+    h1 {
+        color: blue;
+    }
+}
+
+/* 3 - outros modos:
+screen = atingindo telas
+print = quando o usuário imprime a pagina (em relação a folha de impressão)
+speech = quando é usao leitores de tela
+all =  atinge todos os modos (all é default, não precisa ser declarado) */
+
+@media print and (max-width: 600px) {
+    h1 {
+        color: green;
+    }
+}
+
+/* 4 - Todos os modos */
+@media (max-width: 700px) {
+    h2 {
+        color: purple;
+    }
+}
+
+/* 5 - Mobile first 
+fluxo de desenvolvimento = min-width > max-width
+ou seja começa-se o desenvolvimento para telas menores e ajusta-se
+o media query para telas maiores posteriormente */
+@media (min-width: 200px) {
+/* min-width = telas maiores que alguma resolução usam as modificações*/
+    h2 {
+        color: teal;
+    }
+}
+
+/* 6 - AND na media query (trabalha com um intervalo de resoluções)*/
+@media (min-width: 300px) and (max-width: 400px) {
+    h3 {
+        font-size: 3em;
+    }
+}
+
+/* 7 - Orientation */
+/* landscape é na horizontal */
+@media (orientation: landscape) {
+    h3 {
+        color: brown;
+    }
+}
+
+/* 8 - OR na media query (faz algo em uma resolução ou em outra resolução) */
+@media (max-width: 200px), (orientation: landscape) {
+    h3 {
+        font-size: 4em;
+    }
+}
+
+/* 9 - Cuidado ao aplicar media query: MQ são as ultimas regras no CSS 
+A ORDEM DO CSS IMPORTA, sou seja, 
+se tiverem regras depois da MQ ela irá sobrescrever
+a regra da MQ */
+
+/* 10 - Breakpoints */
+h5 {
+    font-size: 3em;
+  }
+
+/* 320px - 480px = mobile */
+/* Em mobile first não precisa de MQ */
+h5 {
+  color: aqua;
+}
+
+/* 480px - 768px = tablet */
+@media (min-width: 480px) {
+  h5 {
+    color: burlywood;
+  }
+}
+
+/* 768px - 1024px = telas menores, laptops */
+@media (min-width: 768px) {
+  h5 {
+    color: cadetblue;
+  }
+}
+
+/* 1024px - 1200px = desktop */
+@media (min-width: 1024px) {
+  h5 {
+    color: coral;
+  }
+}
+
+/* 1200 e + = telas maiores, tvs */
+@media (min-width: 1200px) {
+  h5 {
+    color: darkorchid;
+  }
+}
